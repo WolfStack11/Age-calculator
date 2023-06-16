@@ -145,3 +145,14 @@ submitButton.addEventListener("click", () => {
     }
 })
 
+window.addEventListener('keydown', (event) => {
+    if (event.code === 'Enter') {
+        event.preventDefault();
+        isDayCorrect();
+        isMonthCorrect();
+        isYearCorrect();
+        if(isDayCorrect() && isMonthCorrect() && isYearCorrect()) {
+            getAge();
+        }
+    }
+});
