@@ -84,13 +84,13 @@ const getAge = () => {
 
 const isDayCorrect = () => {
     if(day.value == "") {
-        errorState(0, day, typeOfError[1], "#ff575");
+        errorState(0, day, typeOfError[1], "#ff5757");
         return false;
     } else if(day.value <= 0 || day.value > 31) {
-        errorState(0, day, typeOfError[4], "#ff575");
+        errorState(0, day, typeOfError[4], "#ff5757");
         return false;
     } else if(isYearLeap(day.value, month.value, year.value) == false) {
-        errorState(0, day, typeOfError[5], "#ff575");
+        errorState(0, day, typeOfError[5], "#ff5757");
         return false;
     } else {
         errorState(0, day, typeOfError[0], "");
@@ -100,13 +100,13 @@ const isDayCorrect = () => {
 
 const isMonthCorrect = () => {
     if(month.value == "") {
-        errorState(1, month, typeOfError[1], "#ff575");
+        errorState(1, month, typeOfError[1], "#ff5757");
         return false;
     } else if(month.value <= 0 || month.value > 12) {
-        errorState(1, month, typeOfError[2], "#ff575");
+        errorState(1, month, typeOfError[2], "#ff5757");
         return false;
     } else if(isYearLeap(day.value, month.value, year.value) == false) {
-        errorState(1, month, typeOfError[0], "#ff575");
+        errorState(1, month, typeOfError[0], "#ff5757");
         return false;
     } else {
         errorState(1, month, typeOfError[0], "");
@@ -116,19 +116,19 @@ const isMonthCorrect = () => {
 
 const isYearCorrect = () => {
     if(year.value == "") {
-        errorState(2, year, typeOfError[1], "#ff575");
+        errorState(2, year, typeOfError[1], "#ff5757");
         return false;
     } else if(year.value > currentYear) {
-        errorState(2, year, typeOfError[3], "#ff575");
+        errorState(2, year, typeOfError[3], "#ff5757");
         return false;
     } else if(isYearLeap(day.value, month.value, year.value) == false) {
-        errorState(2, year, typeOfError[0], "#ff575");
+        errorState(2, year, typeOfError[0], "#ff5757");
         return false;
     } else if(year.value == currentYear && month.value > currentMonth) {
-        errorState(1, month, typeOfError[3], "#ff575");
+        errorState(1, month, typeOfError[3], "#ff5757");
         return false;
     } else if(year.value == currentYear && month.value == currentMonth && day.value > currentDay) {
-        errorState(0, day, typeOfError[2], "#ff575");
+        errorState(0, day, typeOfError[2], "#ff5757");
     } else {
         errorState(2, year, typeOfError[0], "");
         return true;
